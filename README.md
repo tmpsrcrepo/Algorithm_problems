@@ -1,3 +1,3 @@
-# LeetCode_practice
+# Algorithm_problems
 
-Solved leetcode problems
+Some coding practice on algorithm problems
