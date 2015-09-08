@@ -1,3 +1,4 @@
+#count number of unique BST out of array [1...n]
 def numTree1(n):
     result = [1,1,2]
     itr = 0
