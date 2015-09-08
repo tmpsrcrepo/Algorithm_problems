@@ -1,3 +1,3 @@
 # Algorithm_problems
 
-Some coding practice on algorithm problems
+Coding practice on algorithm problems
