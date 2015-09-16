@@ -7,7 +7,7 @@ def lengthOfLongestSubstring(s):
     for i in range(len(s)):
         st = s[i]
         if dict_freq.__contains__(st):
-            #update the max_length when encounters a duplicate
+            #update the max_length when an duplicate is encountered
             max_count = max(tmp,max_count)
             
             tmp_index = dict_freq.get(st)
