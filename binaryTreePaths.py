@@ -1,6 +1,6 @@
 
         
-class Solution(object):
+class BTPathsSolution(object):
     def binaryTreePathFind(self,root,path,result):
     if root == None:
         return 
@@ -14,10 +14,6 @@ class Solution(object):
         path=path[:-1]
         
     def binaryTreePaths(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[str]
-        """
         result = []
         self.binaryTreePathFind(root,'',result)
         return map(lambda x:x[2:],result)
