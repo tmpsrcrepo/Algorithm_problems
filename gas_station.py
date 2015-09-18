@@ -9,7 +9,9 @@ class gas_station_Solution(object):
         :type cost: List[int]
         :rtype: int
         """
-
+        # calculate cumulative sum of (gas-cost) at each point
+        # if the total sum of (gas-cost) < 0 -> can't finish this journey
+        # otherwise, start with the minimum point
         min_ = 0
         min_index = 0
         cur = 0
