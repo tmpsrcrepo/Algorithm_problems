@@ -2,7 +2,7 @@ class subsetswithDupSolution(object):
     def subsetsIterative(self,nums):
         nums = sorted(nums)
         result = [[],[nums[0]]]
-        tmpresult = [[nums[0]]]
+        tmpresult = results[-1]
         prev = nums[0]
         if len(nums)>1:
             for i,n in enumerate(nums[1:]):
