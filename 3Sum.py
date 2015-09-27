@@ -1,5 +1,25 @@
-
+# Question: to find a,b,c where sum(a,b,c) = 0 and a<b<c
+# Solution: 
+        """
+        Since a+b+c = 0 and a<=b<=c
+        Then there're only two cases: 
+        1. a+b < 0, c > 0
+        2. a+b = 0, c = 0,
+           however, b can't be greater than 0 since c = 0
+           -> a=0, b=0, c = 0
+        
+        c can only be >=0. dict_pos will store positive candidates
+        b and c can only be <=0. dict_neg will store negative candidates
+        zeros = count(zeros)
+        
+        After defining the domain of each solution, we traverse the sorted array once to populate dictionaries
+        #if we find 3 zeros, then we append (0,0,0) immediately
+        #then we traverse dict_neg and use the method of solving 2sum (find a,b where a+b = c)
+        
+        """
+        
 def threeSum(nums):
+    # dictionary for positive and negative values
     dict_pos = {}
     dict_neg = {}
     zeros = 0
