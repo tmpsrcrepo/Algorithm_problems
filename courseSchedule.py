@@ -5,6 +5,7 @@
 # and find out if it's possible to visit every edge (= pair)
 # by topological sort. If there's a cycle -> some edges left and it's impossible to finish each course
 
+#BFS and DFS approaches
 class finishClass(object):
     def BFStopological(self,numCourse,prerequisites):
         #create graph
@@ -24,3 +25,30 @@ class finishClass(object):
                 if incoming[m] == 0:
                     S.append(m)
         return count==0
+
+    def dfsTopological(self,graph,node):
+
+        for n in graph[node]:
+            if self.visited[n]==1:
+                self.count = -1
+                return
+            else:
+                if self.visited[n]==0:
+                    self.visited[n]=1
+                    graph[node] = graph[node][1:]
+                    self.dfsTopological(graph,n)
+        self.visited[node]=2
+    
+    
+    def canFinish(self,numCourse,prerequisites):
+        graph = {i:[] for i in range(numCourse)}
+        for pair in prerequisites:
+            graph[pair[1]].append(pair[0])
+        self.visited = [0]*numCourse
+        self.count = 0
+        for k in graph:
+            if self.visited[k] == 0:
+                self.visited[k] = 1
+                self.dfsTopological(graph,k)
+        
+        return self.count == 0
