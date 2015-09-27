@@ -27,14 +27,14 @@ class finishClass(object):
         return count==0
 
     def dfsTopological(self,graph,node):
-
+        self.visited[node]=1
         for n in graph[node]:
             if self.visited[n]==1:
                 self.count = -1
                 return
             else:
                 if self.visited[n]==0:
-                    self.visited[n]=1
+                    
                     graph[node] = graph[node][1:]
                     self.dfsTopological(graph,n)
         self.visited[node]=2
@@ -48,7 +48,6 @@ class finishClass(object):
         self.count = 0
         for k in graph:
             if self.visited[k] == 0:
-                self.visited[k] = 1
                 self.dfsTopological(graph,k)
         
         return self.count == 0
