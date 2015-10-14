@@ -14,6 +14,8 @@ class BS_RotatedArraySolution(object):
         if target < nums[mid]:
             if (nums[start] <= target) or (nums[start] > target and target<=nums[end] and nums[mid]<nums[end]):
                 return self.BSearch(nums,target,start,mid-1)
+        #If target > nums[mid], we can either find the target from first half and second half
+        #Therefore, we need to search from both array
         a = self.BSearch(nums,target,start,mid-1)
         if a == -1:
             return self.BSearch(nums,target,mid+1,end)
