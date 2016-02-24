@@ -1,3 +1,5 @@
+#find the max number of points on the same line
+#classic algorithm problem
 class maxPoints(object):
     def calc_diff_pairs(self,ox,oy,index,points):
         v = 0
