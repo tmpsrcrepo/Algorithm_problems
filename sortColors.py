@@ -1,9 +1,5 @@
 
 def sortColors(self, nums):
-      """
-      :type nums: List[int]
-      :rtype: void Do not return anything, modify nums in-place instead.
-      """
 
       i = 0
       j = len(nums)-1
