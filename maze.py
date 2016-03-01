@@ -1,3 +1,4 @@
+#https://www.careercup.com/question?id=5725353829990400
 import collections
 
 def direction(matrix,m,n,i,j,queue,counter):
@@ -33,7 +34,7 @@ def bfs(matrix):
         #matrix[i][j] = 'X' #mark visited
         v = matrix[i][j]
         direction(matrix,m,n,i,j,queue,v+1)
-    return v
+    return v-1
 
 
 
