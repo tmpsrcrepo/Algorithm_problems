@@ -11,14 +11,8 @@ class unionFind:
         self.parents = parents
     '''compression find: improve the find cost -> improve union cost
     '''
-    def find(self,x):
-        while x != self.parents[x]:
-            #update its parent to its grandparents
-            x = self.parents[x] = self.parents[self.parents[x]]
-            #update x
-        return x
         
-    def find1(self,x):
+    def find(self,x):
         #first find its root
         fa = parent = self.parents[x]
         while self.parents[parent] != parent:
