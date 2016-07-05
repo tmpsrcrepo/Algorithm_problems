@@ -1,12 +1,5 @@
+#Two pointers + Hashmap
 class minWindowSubstring(object):
-    '''
-    def minWindow(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: str
-        """
-    '''
     def minWindow(self, source, target):
         
         start = end = 0
@@ -20,20 +13,28 @@ class minWindowSubstring(object):
         minLen=sys.maxint
         outStart=outEnd = 0
         
-        
         while end < lim:
-            if wordDict[source[end]] > 0:
-                
-                counter-=1
-            wordDict[source[end]]-=1
+            #if the character is not visited (or visited but outside the window)
+            #decrement the counter
             
+            #expand the right side of the window (if not all of the characters are included)
+            c = source[end]
+            if wordDict[c] > 0:
+                counter-=1
+            #if the character is visited and in t: wordDict[c] < 0
+            #if the charcter is not in t: wordDict[c] = 0
+            wordDict[c]-=1
+            
+            
+            #find the left side of the window when all of the characters are included
             while counter == 0:
                 tmpLen = end - start
                 if tmpLen < minLen:
                     minLen = tmpLen
                     outStart,outEnd = start,end
-                
+                #increment the count in dictionary
                 wordDict[source[start]]+=1
+                #if the count is greater than 0, decrement the count
                 if wordDict[source[start]]>0:
                     counter+=1
                 start+=1
