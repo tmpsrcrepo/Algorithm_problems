@@ -1,6 +1,6 @@
 '''
 Minimum number of palindrome cuts
-extremely classic DP questions:
+   extremely classic DP question!!
 need two DP concepts to make this work:
 1. dp[i]= min(dp[j-1]+1,dp[i]) -> calculate the best cut
 2. however TLE occurs for strings like "aaaaaaaaaaaaaaaaaab"
