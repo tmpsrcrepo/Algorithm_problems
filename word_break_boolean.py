@@ -17,11 +17,6 @@ class canBreak(object):
         dp[index] = 0
         return False
     def wordBreak(self, s, wordDict):
-        """
-        :type s: str
-        :type wordDict: Set[str]
-        :rtype: bool
-        """
         dp = [-1]*len(s)
         for i,w, in enumerate(s):
             if s[:i+1] in wordDict:
@@ -45,11 +40,6 @@ class canBreak(object):
         return False
 
     def wordBreak(self, s, wordDict):
-        """
-        :type s: str
-        :type wordDict: Set[str]
-        :rtype: bool
-        """
         dp = [-1]*len(s)
         return self.dfs_word(s,wordDict,0,dp)
 
