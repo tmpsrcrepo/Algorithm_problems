@@ -1,4 +1,6 @@
 #given a dictionary of words, and a concatenated string -> see if it can be broken into a list of words
+
+#Top down & bottm-up
 class canBreak(object):
     #dp: state: cut by the current point: T/F/unvisited
     #backtrack: enumerate each character in the string
