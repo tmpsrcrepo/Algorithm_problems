@@ -47,7 +47,6 @@ class AlienDictionary(object):
                     numEdges+=1
                     edges[c1].append(c2)
                     degrees[c2]+=1
-                    lim1=j+1
                     break
             pre = cur
                     
